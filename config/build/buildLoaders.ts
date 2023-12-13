@@ -31,18 +31,23 @@ export const buildLoaders = ({
     ],
   };
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  };
+
   const fileLoader = {
-    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+    test: /\.(woff(2)?|ttf|eot|png|jpe?g|gif)(\?v=\d+\.\d+\.\d+)?$/,
     use: [
       {
         loader: "file-loader",
         options: {
           name: "[name].[ext]",
-          outputPath: "fonts/",
+          outputPath: "assets/",
         },
       },
     ],
   };
 
-  return [typescriptLoader, cssLoader, fileLoader];
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 };

@@ -1,11 +1,11 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Navbar } from "@/widgets/Navbar";
 import { AppRouter } from "./providers/router";
 import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
+import { Navbar } from "@/widgets/Navbar";
 import "./styles/index.scss";
 
 const App = ({}) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div
@@ -13,7 +13,6 @@ const App = ({}) => {
     >
       <Navbar />
       <AppRouter />
-      <button onClick={toggleTheme}>Theme</button>
     </div>
   );
 };
