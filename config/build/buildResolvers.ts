@@ -1,5 +1,5 @@
-import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+import webpack from 'webpack'
+import { BuildOptions } from './types/config'
 
 export const buildResolvers = ({
   paths,
@@ -11,4 +11,4 @@ export const buildResolvers = ({
   alias: {
     '@': paths.src,
   },
-});
+})

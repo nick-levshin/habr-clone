@@ -1,14 +1,10 @@
-import type { Config } from 'jest';
+import type { Config } from 'jest'
 
 const config: Config = {
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-  ],
-  moduleDirectories: [
-    'node_modules',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
+  moduleDirectories: ['node_modules'],
   moduleFileExtensions: [
     'js',
     'mjs',
@@ -20,9 +16,7 @@ const config: Config = {
     'node',
   ],
   rootDir: '../../',
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
-};
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+}
 
-export default config;
+export default config

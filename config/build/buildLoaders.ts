@@ -1,6 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import { BuildOptions } from './types/config'
 
 export const buildLoaders = ({
   isDev,
@@ -16,12 +16,12 @@ export const buildLoaders = ({
         },
       },
     ],
-  };
+  }
 
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
-  };
+  }
 
   // Just for learning, no need to use for prod
   const babelLoader = {
@@ -42,14 +42,14 @@ export const buildLoaders = ({
         ],
       },
     },
-  };
+  }
 
   // If we don't use typesctipt we should add babel-loader
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  };
+  }
 
   const cssLoader = {
     test: /\.s[ac]ss$/i,
@@ -68,7 +68,7 @@ export const buildLoaders = ({
       },
       'sass-loader',
     ],
-  };
+  }
 
-  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
-};
+  return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader]
+}
