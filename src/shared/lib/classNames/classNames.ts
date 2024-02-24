@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>
+type Mods = Record<string, boolean | string>;
 
 export const classNames = (
   cls: string,
@@ -11,4 +11,4 @@ export const classNames = (
     ...Object.entries(mods)
       .filter(([_className, value]) => !!value)
       .map(([className]) => className),
-  ].join(' ')
+  ].join(' ');

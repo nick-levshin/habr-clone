@@ -1,0 +1,24 @@
+.Loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+
+@keyframes l5 {
+    0%  {
+      box-shadow: 20px 0 var(--primary-color), -20px 0 var(--secondary-color);background: var(--primary-color) 
+    }
+
+    33% {
+      box-shadow: 20px 0 var(--primary-color), -20px 0 var(--secondary-color);background: var(--secondary-color)
+    }
+
+    66% {
+      box-shadow: 20px 0 var(--secondary-color),-20px 0 var(--primary-color); background: var(--secondary-color)
+    }
+
+    100%{
+      box-shadow: 20px 0 var(--secondary-color),-20px 0 var(--primary-color); background: var(--primary-color) 
+    }
+}
