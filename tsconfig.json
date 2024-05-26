@@ -11,9 +11,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["jest", "@testing-library/jest-dom"],
     // for imports
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "ts-node": {
     "compilerOptions": {

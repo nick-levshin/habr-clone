@@ -18,8 +18,13 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
         className,
       ])}
+      data-testid="sidebar"
     >
-      <button type="button" onClick={() => setCollapsed(prev => !prev)}>
+      <button
+        type="button"
+        onClick={() => setCollapsed(prev => !prev)}
+        data-testid="sidebar-toggle"
+      >
         {t('toggle')}
       </button>
       <div className={styles.switchers}>
