@@ -95,12 +95,6 @@
     "react-router-dom": "^6.20.1"
   },
   "loki": {
-    "chromeFlags": [
-      "--no-sandbox"
-    ],
-    "chromeLoadTimeout": 60000,
-    "captureTimeout": 60000,
-    "waitBeforeCapture": 3000,
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",

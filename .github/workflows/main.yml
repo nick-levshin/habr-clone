@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -43,3 +43,10 @@ jobs:
 
       - name: Screenshot testing
         run: npm run test:ui:ci
+
+      - name: Upload Loki difference screenshots
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: loki-difference-screenshots
+          path: .loki/difference
