@@ -44,6 +44,9 @@ jobs:
       - name: Screenshot testing
         run: npm run test:ui:ci
 
+      - name: List fonts
+        run: fc-list :family | grep 'Inconsolata'
+
       - name: Upload Loki difference screenshots
         if: failure()
         uses: actions/upload-artifact@v3
