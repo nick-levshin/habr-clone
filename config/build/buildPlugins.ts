@@ -22,5 +22,5 @@ export const buildPlugins = ({
   }),
   isDev && new ReactRefreshWebpackPlugin(),
   isDev && new webpack.HotModuleReplacementPlugin(),
-  new BundleAnalyzerPlugin({ openAnalyzer: false }),
+  isDev && new BundleAnalyzerPlugin({ openAnalyzer: false }),
 ];
