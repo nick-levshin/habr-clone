@@ -28,6 +28,14 @@ export const Clear: Story = {
   decorators: [ThemeDecorator(Theme.LIGHT)],
 };
 
+export const ClearInverted: Story = {
+  args: {
+    children: 'Text',
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+};
+
 export const Outline: Story = {
   args: {
     children: 'Text',

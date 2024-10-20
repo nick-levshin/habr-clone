@@ -8,7 +8,9 @@ import {
   useRef,
   useState,
 } from 'react';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
 interface ModalProps {
@@ -30,6 +32,7 @@ export const Modal: FC<ModalProps> = ({
 
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
 
   const closeHandler = useCallback(
     (e?: KeyboardEvent<HTMLDivElement>) => {
@@ -61,26 +64,29 @@ export const Modal: FC<ModalProps> = ({
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
+    [styles[theme]]: true,
   };
 
   return (
-    <div className={classNames(styles.Modal, mods, [className])}>
-      <div
-        ref={overlayRef}
-        className={styles.overlay}
-        onClick={_e => closeHandler()}
-        onKeyDown={closeHandler}
-        role="button"
-        tabIndex={0}
-      >
+    <Portal>
+      <div className={classNames(styles.Modal, mods, [className])}>
         <div
-          className={styles.content}
-          onClick={onContentClick}
-          role="presentation"
+          ref={overlayRef}
+          className={styles.overlay}
+          onClick={_e => closeHandler()}
+          onKeyDown={closeHandler}
+          role="button"
+          tabIndex={0}
         >
-          {children}
+          <div
+            className={styles.content}
+            onClick={onContentClick}
+            role="presentation"
+          >
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   );
 };
