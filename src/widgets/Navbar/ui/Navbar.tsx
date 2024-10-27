@@ -20,7 +20,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
   return (
     <div className={classNames(styles.Navbar, {}, [className])}>
       <Button
-        theme={ButtonTheme.CLEAR}
+        theme={ButtonTheme.CLEAR_INVERTED}
         className={styles.links}
         onClick={onToggleModal}
       >
