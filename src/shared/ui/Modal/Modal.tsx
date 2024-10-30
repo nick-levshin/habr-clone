@@ -64,12 +64,17 @@ export const Modal: FC<ModalProps> = ({
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
-    [styles[theme]]: true,
   };
 
   return (
     <Portal>
-      <div className={classNames(styles.Modal, mods, [className])}>
+      <div
+        className={classNames(styles.Modal, mods, [
+          className,
+          theme,
+          'app_modal',
+        ])}
+      >
         <div
           ref={overlayRef}
           className={styles.overlay}
