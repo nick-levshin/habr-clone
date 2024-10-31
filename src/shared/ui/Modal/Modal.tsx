@@ -18,6 +18,7 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -27,8 +28,10 @@ export const Modal: FC<ModalProps> = ({
   children,
   isOpen,
   onClose,
+  lazy,
 }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -52,6 +55,10 @@ export const Modal: FC<ModalProps> = ({
   };
 
   useEffect(() => {
+    if (isOpen) setIsMounted(true);
+  }, [isOpen]);
+
+  useEffect(() => {
     if (isOpen && overlayRef.current) {
       overlayRef.current.focus();
     }
@@ -65,6 +72,10 @@ export const Modal: FC<ModalProps> = ({
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
