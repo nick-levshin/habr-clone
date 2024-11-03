@@ -9,7 +9,7 @@ describe('counterSlice', () => {
   });
 
   test('should decrement value', () => {
-    const state: Partial<CounterScheme> = {
+    const state: DeepPartial<CounterScheme> = {
       value: 10,
     };
     expect(
@@ -18,7 +18,7 @@ describe('counterSlice', () => {
   });
 
   test('should increment value', () => {
-    const state: Partial<CounterScheme> = {
+    const state: DeepPartial<CounterScheme> = {
       value: 10,
     };
     expect(

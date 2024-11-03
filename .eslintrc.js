@@ -55,6 +55,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    DeepPartial: 'readonly',
   },
   overrides: [
     {
