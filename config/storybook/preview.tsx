@@ -1,7 +1,6 @@
 import type { Preview } from '@storybook/react';
 import '@/app/styles/index.scss';
 import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { TranslationDecorator } from '@/shared/config/storybook/TranslationDecorator/TranslationDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -12,7 +11,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [RouterDecorator, TranslationDecorator],
+  decorators: [RouterDecorator],
 };
 
 export default preview;

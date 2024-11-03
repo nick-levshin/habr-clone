@@ -4,6 +4,10 @@ import i18n from '@/shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { User, userActions } from '@/entities/User';
 
+enum LoginError {
+  INCORRECT_DATA = 'You entered an incorrect username or password',
+}
+
 interface LoginByUsernameProps {
   username: string;
   password: string;
@@ -28,8 +32,6 @@ export const loginByUsername = createAsyncThunk<
     return response.data;
   } catch (e) {
     console.log(e);
-    return thunkAPI.rejectWithValue(
-      i18n.t('You entered an incorrect username or password'),
-    );
+    return thunkAPI.rejectWithValue(LoginError.INCORRECT_DATA);
   }
 });
