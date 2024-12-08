@@ -5,7 +5,7 @@ import { userActions } from '@/entities/User';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider/lib/useTheme';
+import { useTheme } from './providers/ThemeProvider';
 
 function App() {
   const dispatch = useAppDispatch();
